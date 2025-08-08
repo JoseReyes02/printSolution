@@ -1,0 +1,99 @@
+{{> header}}
+<div class="mt-5"></div>
+<br>
+<br>
+<section id="repairs" class="container my-5">
+    <h2 class="text-center mb-4">Printer Repair Services</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <img src="https://res.cloudinary.com/dcwcnag77/image/upload/v1752896558/nos9fdqeld3jwzxlh3h7.jpg"
+                alt="Printer Repair" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+            <h4>We repair all major printer brands</h4>
+            <br>
+            <p>
+                Whether it’s a jammed paper, faded prints, or system error — our certified technicians are ready to fix
+                your printer fast and professionally.
+            </p>
+            <ul>
+                <li>HP, Epson, Canon, Brother, Lexmark and more</li>
+                <li>Laser, inkjet, thermal and dot matrix printers</li>
+                <li>Quick diagnosis and same-day service available</li>
+                <li>Service warranty included</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline-primary mt-3" data-bs-toggle="modal"
+                data-bs-target="#serviceRequestModal"> Request Service</a>
+        </div>
+    </div>
+</section>
+<style>
+    .modal {
+  z-index: 2000 !important;
+}
+
+.modal-backdrop {
+  z-index: 1900 !important;
+}
+
+</style>
+
+<!-- Modal con el formulario -->
+<div class="modal fade" id="serviceRequestModal" tabindex="-1" aria-labelledby="serviceRequestModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviceRequestModalLabel">Service Request Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="serviceForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="service" class="form-label">Service Type</label>
+                        <select class="form-select" id="service" name="service" required>
+                            <option value="">Select...</option>
+                            <option value="sales">Printer Sales</option>
+                            <option value="rentals">Printer Rentals</option>
+                            <option value="repairs" selected>Printer Repairs</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Additional Details</label>
+                        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">Send Request</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS (necesario para modal) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script para manejar el envío -->
+<script>
+    document.getElementById("serviceForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Your request has been sent successfully!");
+        document.querySelector("#serviceRequestModal .btn-close").click(); // Cierra el modal
+        this.reset(); // Limpia el formulario
+    });
+</script>

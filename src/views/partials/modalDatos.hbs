@@ -1,0 +1,62 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document"> 
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Order Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnCerrarModal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="orderForm">
+                    <!-- Full Name -->
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullname" class="form-control"   />
+
+                    <!-- Email -->
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" class="form-control"  />
+
+                    <!-- Phone Number -->
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" class="form-control"  />
+
+                    <!-- Delivery Address -->
+                    <label for="address">Delivery Address *</label>
+                    <textarea id="address" name="address" rows="3" class="form-control" ></textarea>
+
+                    <!-- City -->
+                    <label for="city">City *</label>
+                    <input type="text" id="city" name="city" class="form-control"  />
+
+                    <!-- Postal Code -->
+                    <label for="postalCode">Postal Code</label>
+                    <input type="text" id="postalCode" class="form-control" name="postalcode" />
+
+                    <!-- Optional Notes -->
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" name="notes" rows="2" class="form-control"
+                        placeholder="E.g. color preferences, custom requests..."></textarea>
+
+                    <!-- Submit Button -->
+                    <div style="text-align: center;" class="mt-4">
+                        <button type="submit" class="btn btn-success">Place Order</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    label{
+        margin: 5px;
+    }
+
+    
+</style>

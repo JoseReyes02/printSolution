@@ -1,0 +1,260 @@
+<body class="animsition">
+
+	{{> header}}
+	{{> modalDatos}}
+	<!-- Cart -->
+	{{> car}}
+	{{> mensaje}}
+	<style>
+		.modal {
+			z-index: 99999 !important;
+		}
+
+		.modal-backdrop {
+			z-index: 99998 !important;
+		}
+	</style>
+
+	<!-- Slider -->
+	<section class="section-slide">
+		<div class="wrap-slick1">
+			<div class="slick1">
+				{{#each carrousel}}
+				<div class="item-slick1" style="background-image: url({{urlImagen}});">
+					<div class="container h-full">
+						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
+							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
+								<span class="ltext-101 cl2 respon2">
+
+								</span>
+							</div>
+
+							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
+								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
+									{{texto1}}
+								</h2>
+							</div>
+
+							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
+								<a href="product.html"
+									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
+									Shop Now
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Banner -->
+	
+	<div class="sec-banner bg0 p-t-80 p-b-50">
+		<section id="services" class="container my-5">
+			<h2 class="text-center mb-4">Our Services</h2>
+			<div class="row">
+
+				<!-- Sales -->
+				<div class="col-md-4">
+					<div class="card h-100 text-center">
+						<img src="https://res.cloudinary.com/dcwcnag77/image/upload/v1752898068/ahyolkhwhjzio3p38ntx.png" class="card-img-top"
+							alt="Printer Sales"  style="height: 200px;">
+						<div class="card-body">
+							<h5 class="card-title">Printer Sales</h5>
+							<p class="card-text">We offer high-quality new and refurbished printers with warranty and
+								technical support.</p>
+							<a href="#contact" class="btn btn-primary">Request Service</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Rentals -->
+				<div class="col-md-4">
+					<div class="card h-100 text-center">
+						<img src="https://res.cloudinary.com/dcwcnag77/image/upload/v1752896599/g7ssyexyoh2opjd4brzv.avif" class="card-img-top"
+							alt="Printer Rentals" style="height: 200px;">
+						<div class="card-body">
+							<h5 class="card-title">Printer Rentals</h5>
+							<p class="card-text">Flexible rental plans for businesses and events. We handle
+								installation, maintenance, and support.</p>
+							<a href="Rentals" class="btn btn-primary">Request Service</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Repairs -->
+				<div class="col-md-4">
+					<div class="card h-100 text-center">
+						<img src="https://res.cloudinary.com/dcwcnag77/image/upload/v1752896558/nos9fdqeld3jwzxlh3h7.jpg" class="card-img-top"
+							alt="Printer Repairs"  style="height: 200px;">
+						<div class="card-body">
+							<h5 class="card-title">Printer Repairs</h5>
+							<p class="card-text">Fast and effective solutions. Specialized technicians for multiple
+								printer brands and models.</p>
+							<a href="/Repair" class="btn btn-primary">Request Service</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+	</div>
+
+
+	<!-- Product -->
+	<section class="bg0 p-t-23 p-b-140">
+		<div class="container">
+			<div class="p-b-10" style="text-align: center;">
+				<h2 class="text-center mb-4">Products for sale</h2>
+			</div>
+
+			<div class="flex-w flex-sb-m p-b-52">
+				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
+						All
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
+						HP
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".men">
+						Brother
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".bag">
+						Canon
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".shoes">
+						Samsung
+					</button>
+
+					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".watches">
+						Watches
+					</button>
+				</div>
+
+				<div class="flex-w flex-c-m m-tb-10">
+
+
+					<div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
+						<i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
+						<i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
+						Search
+					</div>
+				</div>
+
+				<!-- Search product -->
+				<div class="dis-none panel-search w-full p-t-10 p-b-15">
+					<div class="bor8 dis-flex p-l-15">
+						<button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
+							<i class="zmdi zmdi-search"></i>
+						</button>
+
+						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product"
+							placeholder="Search">
+					</div>
+				</div>
+
+
+			</div>
+
+			<div class="row isotope-grid">
+				{{#each machines}}
+				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+					<!-- Block2 -->
+
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							{{!-- //CARROUSEL --}}
+							{{!-- <p class="m-2">{{titulo}}</p> --}}
+							<div id="carouselExampleControls{{@index}}" class="carousel slide" data-ride="carousel">
+
+								<ol class="carousel-indicators">
+									{{#each image}}
+									<li data-target="#carousel{{@index}}" data-slide-to="{{@index}}" {{#if
+										@first}}class="active" {{/if}}>
+									</li>
+									{{/each}}
+								</ol>
+								<div class="carousel-inner" style="height: 100%;">
+									{{#each image}}
+									<div class="carousel-item {{#if @first}}active{{/if}}">
+										<img src="{{this.urlImagen}}" alt="Imagen {{@index}}" class="img-carousel"
+											style="width: 100%; height: 300px;">
+									</div>
+									{{/each}}
+								</div>
+								<a class="carousel-control-prev" href="#carouselExampleControls{{@index}}" role="button"
+									data-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="sr-only">Previous</span>
+								</a>
+								<a class="carousel-control-next" href="#carouselExampleControls{{@index}}" role="button"
+									data-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
+								</a>
+							</div>
+
+							<button
+								class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04"
+								onclick="verDetalles('{{_id}}')">
+								See details
+							</button>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									{{name}}
+								</a>
+
+								<span class="stext-105 cl3">
+									${{price}}
+								</span>
+							</div>
+
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png"
+										alt="ICON">
+									<img class="icon-heart2 dis-block trans-04 ab-t-l"
+										src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				{{/each}}
+			</div>
+
+			<!-- Load more -->
+			{{!-- <div class="flex-c-m flex-w w-full p-t-45">
+				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
+					Load More
+				</a>
+			</div> --}}
+		</div>
+	</section>
+
+
+	<!-- Footer -->
+	{{> footer}}
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+
+	<!-- Modal1 -->
+	{{> modalDetalles}}
