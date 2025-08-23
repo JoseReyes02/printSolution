@@ -69,6 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
 						</div>
 
     `
+        document.getElementById('iconoCar2').innerHTML = `
+    	<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti "
+							data-notify="${cantidadProduct}">
+							<i class="zmdi zmdi-shopping-cart"></i>
+						</div>
+
+    `
     var sumTotal = 0
     productos.forEach(producto => {
         const cantidad = parseFloat(producto.cantidad)
@@ -143,6 +150,13 @@ function mostrarCarrito() {
     }
     const cantidadProduct = productos.length
     document.getElementById('iconoCar').innerHTML = `
+    	<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti "
+							data-notify="${cantidadProduct}">
+							<i class="zmdi zmdi-shopping-cart"></i>
+						</div>
+
+    `
+        document.getElementById('iconoCar2').innerHTML = `
     	<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti "
 							data-notify="${cantidadProduct}">
 							<i class="zmdi zmdi-shopping-cart"></i>

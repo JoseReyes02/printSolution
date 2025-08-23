@@ -114,6 +114,12 @@ document.getElementById("contactBtn").addEventListener("click", function(e) {
     behavior: "smooth"
   });
 });
+document.getElementById("contactBtn2").addEventListener("click", function(e) {
+  e.preventDefault(); // evita que el navegador salte al inicio
+  document.getElementById("footer").scrollIntoView({
+    behavior: "smooth"
+  });
+});
 </script>
 
 <script>
@@ -123,9 +129,21 @@ document.getElementById("contactBtn").addEventListener("click", function(e) {
 			behavior: "smooth" // desplazamiento suave
 		});
 	});
+	document.getElementById("productsBtn2").addEventListener("click", function (e) {
+		 e.preventDefault();
+		document.getElementById("listProducts").scrollIntoView({
+			behavior: "smooth" // desplazamiento suave
+		});
+	});
 </script>
 <script>
 	document.getElementById("servicesBtn").addEventListener("click", function (e) {
+		 e.preventDefault();
+		document.getElementById("services").scrollIntoView({
+			behavior: "smooth" // desplazamiento suave
+		});
+	});
+	document.getElementById("servicesBtn2").addEventListener("click", function (e) {
 		 e.preventDefault();
 		document.getElementById("services").scrollIntoView({
 			behavior: "smooth" // desplazamiento suave
