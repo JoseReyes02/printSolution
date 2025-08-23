@@ -35,7 +35,8 @@
 								</h2>
 							</div>
 
-							{{!-- <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
+							{{!-- <div class="layer-slick1 animated visible-false" data-appear="zoomIn"
+								data-delay="1600">
 								<a href="product.html"
 									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
 									Shop Now
@@ -50,8 +51,8 @@
 	</section>
 
 
-	<!-- Banner -->  
-	
+	<!-- Banner -->
+
 	<div class="sec-banner bg0 p-t-80 p-b-50" id="services">
 		<section id="services" class="container my-5">
 			<h2 class="text-center mb-4">Our Services</h2>
@@ -60,13 +61,13 @@
 				<!-- Sales -->
 				<div class="col-md-4">
 					<div class="card h-100 text-center">
-						<img src="https://res.cloudinary.com/dcwcnag77/image/upload/v1752898068/ahyolkhwhjzio3p38ntx.png" class="card-img-top"
-							alt="Printer Sales"  style="height: 200px;">
+						<img src="https://res.cloudinary.com/dcwcnag77/image/upload/v1752898068/ahyolkhwhjzio3p38ntx.png"
+							class="card-img-top" alt="Printer Sales" style="height: 200px;">
 						<div class="card-body">
 							<h5 class="card-title">Printer Sales</h5>
 							<p class="card-text">We offer high-quality new and refurbished printers with warranty and
 								technical support.</p>
-								<br>
+							<br>
 							<a href="/sale" class="btn btn-primary">Request Service</a>
 						</div>
 					</div>
@@ -75,13 +76,13 @@
 				<!-- Rentals -->
 				<div class="col-md-4">
 					<div class="card h-100 text-center">
-						<img src="https://res.cloudinary.com/dcwcnag77/image/upload/v1752896599/g7ssyexyoh2opjd4brzv.avif" class="card-img-top"
-							alt="Printer Rentals" style="height: 200px;">
+						<img src="https://res.cloudinary.com/dcwcnag77/image/upload/v1752896599/g7ssyexyoh2opjd4brzv.avif"
+							class="card-img-top" alt="Printer Rentals" style="height: 200px;">
 						<div class="card-body">
 							<h5 class="card-title">Printer Rentals</h5>
 							<p class="card-text">Flexible rental plans for businesses and events. We handle
 								installation, maintenance, and support.</p>
-								<br>
+							<br>
 							<a href="Rentals" class="btn btn-primary">Request Service</a>
 						</div>
 					</div>
@@ -90,13 +91,13 @@
 				<!-- Repairs -->
 				<div class="col-md-4">
 					<div class="card h-100 text-center">
-						<img src="https://res.cloudinary.com/dcwcnag77/image/upload/v1752896558/nos9fdqeld3jwzxlh3h7.jpg" class="card-img-top"
-							alt="Printer Repairs"  style="height: 200px;">
+						<img src="https://res.cloudinary.com/dcwcnag77/image/upload/v1752896558/nos9fdqeld3jwzxlh3h7.jpg"
+							class="card-img-top" alt="Printer Repairs" style="height: 200px;">
 						<div class="card-body">
 							<h5 class="card-title">Printer Repairs</h5>
 							<p class="card-text">Fast and effective solutions. Specialized technicians for multiple
 								printer brands and models.</p>
-								<br>
+							<br>
 							<a href="/Repair" class="btn btn-primary">Request Service</a>
 						</div>
 					</div>
@@ -167,7 +168,7 @@
 
 			</div>
 
-			<div class="row isotope-grid" >
+			<div class="row isotope-grid">
 				{{#each machines}}
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 					<!-- Block2 -->
@@ -205,20 +206,16 @@
 								</a>
 							</div>
 
-							<button
-								class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04"
-								onclick="verDetalles('{{_id}}')">
-								See details
-							</button>
+
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
 								<div class="block2-txt-child1 flex-col-l ">
-								<p>{{name}}</p>
-                        
-							  <label for="" style="font-weight: bold">${{price}}</label>
-							</div>
+									<p>{{name}}</p>
+
+									<label for="" style="font-weight: bold">${{price}}</label>
+								</div>
 							</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
@@ -230,6 +227,14 @@
 								</a>
 							</div>
 						</div>
+						<div style="text-align: center;">
+							<button
+								class="btn btn-secondary block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04"
+								onclick="verDetalles('{{_id}}')">
+								See details
+							</button>
+						</div>
+
 					</div>
 
 				</div>
