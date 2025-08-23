@@ -170,7 +170,7 @@
 
 			<div class="row isotope-grid">
 				{{#each machines}}
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+				<div class="col-sm-6 col-lg-3 p-b-35 isotope-item">
 					<!-- Block2 -->
 
 					<div class="block2">
@@ -226,14 +226,17 @@
 										src="images/icons/icon-heart-02.png" alt="ICON">
 								</a>
 							</div>
+							<div style="text-align:center;">
+								<button
+									class="btn btn-secondary stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04"
+									onclick="verDetalles('{{_id}}')">
+									See details
+								</button>
+							</div>
+
 						</div>
-						<div style="text-align: center;">
-							<button
-								class="btn btn-secondary block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04"
-								onclick="verDetalles('{{_id}}')">
-								See details
-							</button>
-						</div>
+
+
 
 					</div>
 
