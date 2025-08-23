@@ -1,118 +1,14 @@
-<body class="animsition">
-
-	{{> header}}
+{{> header}}
 	{{> modalDatos}}
 	<!-- Cart -->
 	{{> car}}
-	{{> mensaje}}
-	<style>
-		.modal {
-			z-index: 99999 !important;
-		}
-
-		.modal-backdrop {
-			z-index: 99998 !important;
-		}
-	</style>
-
-	<!-- Slider -->
-	<section class="section-slide">
-		<div class="wrap-slick1">
-			<div class="slick1">
-				{{#each carrousel}}
-				<div class="item-slick1" style="background-image: url({{urlImagen}});">
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
-							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
-								<span class="ltext-101 cl2 respon2">
-
-								</span>
-							</div>
-
-							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
-								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-									{{texto1}}
-								</h2>
-							</div>
-
-							{{!-- <div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-								<a href="product.html"
-									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-									Shop Now
-								</a>
-							</div> --}}
-						</div>
-					</div>
-				</div>
-				{{/each}}
-			</div>
-		</div>
-	</section>
-
-
-	<!-- Banner -->  
-	
-	<div class="sec-banner bg0 p-t-80 p-b-50" id="services">
-		<section id="services" class="container my-5">
-			<h2 class="text-center mb-4">Our Services</h2>
-			<div class="row">
-
-				<!-- Sales -->
-				<div class="col-md-4">
-					<div class="card h-100 text-center">
-						<img src="https://res.cloudinary.com/dcwcnag77/image/upload/v1752898068/ahyolkhwhjzio3p38ntx.png" class="card-img-top"
-							alt="Printer Sales"  style="height: 200px;">
-						<div class="card-body">
-							<h5 class="card-title">Printer Sales</h5>
-							<p class="card-text">We offer high-quality new and refurbished printers with warranty and
-								technical support.</p>
-								<br>
-							<a href="/sale" class="btn btn-primary">Request Service</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Rentals -->
-				<div class="col-md-4">
-					<div class="card h-100 text-center">
-						<img src="https://res.cloudinary.com/dcwcnag77/image/upload/v1752896599/g7ssyexyoh2opjd4brzv.avif" class="card-img-top"
-							alt="Printer Rentals" style="height: 200px;">
-						<div class="card-body">
-							<h5 class="card-title">Printer Rentals</h5>
-							<p class="card-text">Flexible rental plans for businesses and events. We handle
-								installation, maintenance, and support.</p>
-								<br>
-							<a href="Rentals" class="btn btn-primary">Request Service</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Repairs -->
-				<div class="col-md-4">
-					<div class="card h-100 text-center">
-						<img src="https://res.cloudinary.com/dcwcnag77/image/upload/v1752896558/nos9fdqeld3jwzxlh3h7.jpg" class="card-img-top"
-							alt="Printer Repairs"  style="height: 200px;">
-						<div class="card-body">
-							<h5 class="card-title">Printer Repairs</h5>
-							<p class="card-text">Fast and effective solutions. Specialized technicians for multiple
-								printer brands and models.</p>
-								<br>
-							<a href="/Repair" class="btn btn-primary">Request Service</a>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</section>
-
-	</div>
-
-
-	<!-- Product -->
+<div class="mt-5"></div>
+<br>
+<br>
 	<section class="bg0 p-t-23 p-b-140" id="listProducts">
 		<div class="container">
 			<div class="p-b-10" style="text-align: center;">
-				<h2 class="text-center mb-4">Products for sale</h2>
+				<h2 class="text-center mb-4">All products</h2>
 			</div>
 
 			<div class="flex-w flex-sb-m p-b-52">
@@ -168,7 +64,7 @@
 			</div>
 
 			<div class="row isotope-grid" >
-				{{#each machines}}
+				{{#each productos}}
 				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
 					<!-- Block2 -->
 
@@ -205,20 +101,14 @@
 								</a>
 							</div>
 
-							<button
-								class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04"
-								onclick="verDetalles('{{_id}}')">
-								See details
-							</button>
+							
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
 							<div class="block2-txt-child1 flex-col-l ">
-								<div class="block2-txt-child1 flex-col-l ">
 								<p>{{name}}</p>
                         
 							  <label for="" style="font-weight: bold">${{price}}</label>
-							</div>
 							</div>
 
 							<div class="block2-txt-child2 flex-r p-t-3">
@@ -230,6 +120,9 @@
 								</a>
 							</div>
 						</div>
+                        <div style="text-align: center;">
+                            <button class="btn btn-success">See details</button>
+                        </div>
 					</div>
 
 				</div>
@@ -244,18 +137,3 @@
 			</div> --}}
 		</div>
 	</section>
-
-
-	<!-- Footer -->
-	{{> footer}}
-
-
-	<!-- Back to top -->
-	<div class="btn-back-to-top" id="myBtn">
-		<span class="symbol-btn-back-to-top">
-			<i class="zmdi zmdi-chevron-up"></i>
-		</span>
-	</div>
-
-	<!-- Modal1 -->
-	{{> modalDetalles}}

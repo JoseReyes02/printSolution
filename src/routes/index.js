@@ -202,4 +202,10 @@ router.post('/sendOrder', async (req, res) => {
 })
 
 
+router.get('/sale', async (req, res) => {
+      const productos = await Machines.find({ state: 'completed' })
+    res.render('sale',{productos})
+})
+
+
 module.exports = router;
