@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contenedor = document.getElementById('carrito');
     const productos = JSON.parse(localStorage.getItem('carrito')) || [];
     if (productos.length === 0) {
-        contenedor.innerHTML = "<p>No hay productos en el carrito.</p>";
+        contenedor.innerHTML = "<p>No products in the cart.</p>";
 
            document.getElementById('header-cart-content').style.display = 'none'
 
@@ -141,7 +141,7 @@ function mostrarCarrito() {
     contenedor.innerHTML = '';
     const productos = JSON.parse(localStorage.getItem('carrito')) || [];
     if (productos.length === 0) {
-        contenedor.innerHTML = "<p>No hay productos en el carrito.</p>";
+        contenedor.innerHTML = "<p>No products in the cart.</p>";
           document.getElementById('vewTotal').innerHTML = 'Total: $ 0.00'
            document.getElementById('header-cart-content').style.display = 'none'
         return;

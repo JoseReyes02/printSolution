@@ -22,18 +22,24 @@ document.getElementById('orderForm').addEventListener('submit', function (event)
     })
         .then(res => res.json())
         .then(data => {
-              document.getElementById('btnCerrarModal').click()
-            Swal.fire({
-                title: data.success,
-                icon: "success",
-                draggable: true
-            }).then(() => {
-                  document.getElementById('customModal').style.display = 'block';
-                  localStorage.clear();
-                  document.getElementById('numeroOrdenPersonalizado').innerHTML = data.numOrden
-            
-              
-            });
+            if (data.error) {
+                  alert(data.error)
+            } else {
+                document.getElementById('btnCerrarModal').click()
+                Swal.fire({
+                    title: data.success,
+                    icon: "success",
+                    draggable: true
+                }).then(() => {
+                    document.getElementById('customModal').style.display = 'block';
+                    localStorage.clear();
+                    document.getElementById('numeroOrdenPersonalizado').innerHTML = data.numOrden
+
+
+                });
+
+            }
+
 
         })
         .catch(error => {

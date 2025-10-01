@@ -29,9 +29,6 @@ router.get('/', async (req, res) => {
     const carrousel = (await Carrousel.find().sort({ date: -1 }))
     const machines = await Machines.find({ state: 'completed' })
     const machinesRentails = await Machines.find({ state: 'completed', availabilityType: 'rental' })
-   
-      const ordenes = await ORDER.find()
-    console.log(ordenes)
     res.render('index', { carrousel, machines, machinesRentails });
 
 });
@@ -48,7 +45,7 @@ router.get('/Repair', async (req, res) => {
 });
 router.get('/Rentals', async (req, res) => {
     const machinesRentails = await Machines.find({ state: 'completed', availabilityType: 'rental' })
-    console.log(machinesRentails)
+    // console.log(machinesRentails)
     res.render('Rentals', { machinesRentails });
 
 });
@@ -100,42 +97,52 @@ router.post('/sendOrder', async (req, res) => {
     const { fullname, email, phone, address, city, postalcode, notes } = req.body;
     const { orden } = req.body
     try {
-        const numeroOrden = await generarNumeroOrdenUnico();
-        var total = 0
-        const estado = 'Pending';
-        const count = (await ORDER.find()).length + 1
-        const newOrder = new ORDER({ fullname, email, phone, address, city, postalcode, notes, count, estado, numeroOrden })
-        await newOrder.save()
-        for (var i = 0; i < orden.length; i++) {
-            total += parseFloat(orden[i].precio)
-            const order = ({
-                descrition: orden[i].descrition,
-                precio: orden[i].precio,
-                cantidad: orden[i].cantidad,
-                idProduc: orden[i].idProduc,
-                imagen: orden[i].image
-            })
-            ORDER.findByIdAndUpdate(newOrder._id, { $push: { order: order } }, { new: true })
-                .then(async (publicacionActualizada) => {
-                    if (!publicacionActualizada) {
-                        console.log('Publicación no encontrada');
-                        // Manejar el caso en el que no se encuentra la publicación
-                    } else {
 
-                        await ORDER.findByIdAndUpdate(newOrder._id, { total })
+        // Validate that all fields exist
+        if (!fullname) return res.json({ error: 'Full name is required' });
+        else if (!email) return res.json({ error: 'Email is required' });
+        else if (!phone) return res.json({ error: 'Phone number is required' });
+        else if (!address) return res.json({ error: 'Address is required' });
+        else if (!city) return res.json({ error: 'City is required' });
+        else if (!postalcode) return res.json({ error: 'Postal code is required' });
+        else {
 
-                    }
+            const numeroOrden = await generarNumeroOrdenUnico();
+            var total = 0
+            const estado = 'Pending';
+            const count = (await ORDER.find()).length + 1
+            const newOrder = new ORDER({ fullname, email, phone, address, city, postalcode, notes, count, estado, numeroOrden })
+            await newOrder.save()
+            for (var i = 0; i < orden.length; i++) {
+                total += parseFloat(orden[i].precio)
+                const order = ({
+                    descrition: orden[i].descrition,
+                    precio: orden[i].precio,
+                    cantidad: orden[i].cantidad,
+                    idProduc: orden[i].idProduc,
+                    imagen: orden[i].image
                 })
-                .catch((error) => {
-                    console.error('Error interno:', error);
-                });
-        }
+                ORDER.findByIdAndUpdate(newOrder._id, { $push: { order: order } }, { new: true })
+                    .then(async (publicacionActualizada) => {
+                        if (!publicacionActualizada) {
+                            console.log('Publicación no encontrada');
+                            // Manejar el caso en el que no se encuentra la publicación
+                        } else {
+
+                            await ORDER.findByIdAndUpdate(newOrder._id, { total })
+
+                        }
+                    })
+                    .catch((error) => {
+                        console.error('Error interno:', error);
+                    });
+            }
 
 
-        const today = new Date();
-        const orderDate = today.toLocaleDateString('es-ES'); // Ejemplo: 12/08/2025
+            const today = new Date();
+            const orderDate = today.toLocaleDateString('es-ES'); // Ejemplo: 12/08/2025
 
-        const contentHTML = `
+            const contentHTML = `
                         <!DOCTYPE html>
                         <html>
                         <head>
@@ -179,21 +186,24 @@ router.post('/sendOrder', async (req, res) => {
                         </html>
                         `;
 
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: 'findmyhouse57@gmail.com',
-                pass: 'mktoxcekrsrceebl'
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: 'findmyhouse57@gmail.com',
+                    pass: 'mktoxcekrsrceebl'
+                }
+            })
+            // joanferreras81
+            const mailOptions = {
+                from: '"PrintSolutions" <findmyhouse57@gmail.com>',
+                to: 'joseeladio29.jer@gmail.com',
+                subject: 'Nueva orden!',
+                html: contentHTML,
             }
-        })
-        const mailOptions = {
-            from: '"PrintSolutions" <findmyhouse57@gmail.com>',
-            to: 'joseeladio29.jer@gmail.com',
-            subject: 'Nueva orden!',
-            html: contentHTML,
+            await transporter.sendMail(mailOptions);
+            res.json({ success: 'Orden Send!', numOrden: numeroOrden })
+
         }
-        await transporter.sendMail(mailOptions);
-        res.json({ success: 'Orden Send!', numOrden: numeroOrden })
 
     } catch (error) {
 
@@ -203,8 +213,8 @@ router.post('/sendOrder', async (req, res) => {
 
 
 router.get('/sale', async (req, res) => {
-      const productos = await Machines.find({ state: 'completed' })
-    res.render('sale',{productos})
+    const productos = await Machines.find({ state: 'completed' })
+    res.render('sale', { productos })
 })
 
 
